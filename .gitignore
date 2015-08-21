@@ -30,6 +30,14 @@
 # SFML
 SFML-2.3/
 
+# Ignoring assets
+*.frag
+*.png
+*.jpg
+*.ttf
+*.wav
+*.ogg
+
 Debug/
 Release/
 *.opensdf
