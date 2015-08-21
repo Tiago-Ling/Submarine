@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Backdrop.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Fader.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="PauseScene.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Shot.cpp" />
+    <ClCompile Include="Spawner.cpp" />
+    <ClCompile Include="Tilemap.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Backdrop.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Fader.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameOverScene.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="PauseScene.h" />
+    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Shot.h" />
+    <ClInclude Include="Spawner.h" />
+    <ClInclude Include="Tilemap.h" />
+    <ClInclude Include="Updatable.h" />
+    <ClInclude Include="Util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bloom.frag" />
+    <None Include="blur.frag" />
+    <None Include="grain.frag" />
+    <None Include="grayscale.frag" />
+    <None Include="nice_music.ogg" />
+    <None Include="pixelate.frag" />
+    <None Include="scanline.frag" />
+    <None Include="shader_example.frag" />
+    <None Include="vignette.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="asteroide.png" />
+    <Image Include="blank.png" />
+    <Image Include="cute_image.jpg" />
+    <Image Include="fundo_ceu.jpg" />
+    <Image Include="icon.png" />
+    <Image Include="shot.png" />
+    <Image Include="squid.png" />
+    <Image Include="sub_0.png" />
+    <Image Include="sub_red.png" />
+    <Image Include="sub_red_v2.png" />
+    <Image Include="tileset.png" />
+    <Image Include="transparent.png" />
+    <Image Include="white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="sansation.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3E874920-B7DA-4E19-B6DD-B8D30B719651}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Submarine</RootNamespace>
+    <ProjectName>Submarine</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../SFML-2.3/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../SFML-2.3/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../SFML-2.3/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../SFML-2.3/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ENTRY:"mainCRTStartup" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
